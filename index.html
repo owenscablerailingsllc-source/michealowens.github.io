@@ -4,134 +4,469 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Owens Cable Railings LLC</title>
-
+<meta name="description" content="Premium cable railing installation for decks, balconies, and stairs.">
 <style>
+:root{
+  --bg:#0a0a0a;
+  --panel:#111111;
+  --panel2:#171717;
+  --text:#f5f5f5;
+  --muted:#d3d3d3;
+  --gold:#caa75a;
+  --gold2:#b99243;
+  --line:rgba(255,255,255,.10);
+  --radius:18px;
+  --max:1200px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
   margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:#0a0a0a;
-  color:white;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.45;
 }
-
-/* NAV */
-header{
-  display:flex;
-  justify-content:space-between;
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.container{
+  width:min(var(--max), calc(100% - 24px));
+  margin:0 auto;
+}
+.btn{
+  display:inline-flex;
   align-items:center;
-  padding:16px 20px;
-  background:#000;
+  justify-content:center;
+  gap:10px;
+  min-height:52px;
+  padding:0 20px;
+  border-radius:10px;
+  font-weight:700;
+  letter-spacing:.02em;
+}
+.btn-gold{
+  background:var(--gold);
+  color:#111;
+}
+.btn-dark{
+  background:rgba(0,0,0,.35);
+  color:#fff;
+  border:1px solid rgba(202,167,90,.55);
+}
+.site-header{
   position:sticky;
   top:0;
-  z-index:10;
+  z-index:30;
+  background:rgba(7,7,7,.96);
+  border-bottom:1px solid var(--line);
 }
-
-.logo{
-  font-weight:800;
-  letter-spacing:1px;
-}
-
-.btn{
-  background:#caa75a;
-  color:#000;
-  padding:10px 16px;
-  border-radius:8px;
-  font-weight:700;
-  text-decoration:none;
-}
-
-/* HERO */
-.hero{
-  height:90vh;
-  background:
-    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
-    url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80");
-  background-size:cover;
-  background-position:center;
+.nav{
+  min-height:76px;
   display:flex;
   align-items:center;
-  padding:20px;
+  justify-content:space-between;
+  gap:12px;
 }
-
-.hero-content{
-  max-width:500px;
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
-
-.hero h1{
-  font-size:42px;
-  margin:0;
+.logo-circle{
+  width:52px;
+  height:52px;
+  border:2px solid var(--gold);
+  border-radius:50%;
+  color:var(--gold);
+  display:grid;
+  place-items:center;
+  font-weight:800;
+  font-size:22px;
 }
-
-.hero p{
+.brand-text{
+  line-height:1;
+}
+.brand-text .big{
+  display:block;
+  font-size:18px;
+  font-weight:800;
+  letter-spacing:.08em;
+}
+.brand-text .small{
+  display:block;
+  font-size:11px;
   color:#ddd;
-  margin-top:10px;
+  letter-spacing:.16em;
+  margin-top:5px;
 }
-
-/* SECTIONS */
-.section{
-  padding:40px 20px;
+.nav-links{
+  display:none;
+  gap:24px;
+  font-weight:700;
+  font-size:14px;
 }
-
-.card{
-  background:white;
-  color:black;
-  border-radius:14px;
+.nav-links a:hover{color:var(--gold)}
+.header-btn{
+  min-height:44px;
+  padding:0 16px;
+  font-size:14px;
+}
+.hero{
+  position:relative;
   overflow:hidden;
-  margin-bottom:20px;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.56) 40%, rgba(0,0,0,.28) 100%),
+    url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
 }
-
-.card img{
+.hero-inner{
+  padding:34px 0 28px;
+}
+.hero-copy{
+  max-width:720px;
+  padding:26px 0 10px;
+}
+.eyebrow{
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-weight:800;
+  font-size:13px;
+  margin:0 0 12px;
+}
+.hero h1{
+  margin:0;
+  font-size:54px;
+  line-height:.95;
+  letter-spacing:-.04em;
+  max-width:720px;
+}
+.hero-text{
+  font-size:20px;
+  color:#ececec;
+  max-width:650px;
+  margin:18px 0 22px;
+}
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.hero-actions .btn{
   width:100%;
-  height:220px;
-  object-fit:cover;
 }
-
-.card h2{
-  margin:10px;
+.feature-bar{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:#0b0b0b;
 }
-
+.feature-grid{
+  display:grid;
+  grid-template-columns:1fr;
+}
+.feature{
+  padding:18px 6px;
+  border-bottom:1px solid var(--line);
+}
+.feature:last-child{border-bottom:none}
+.feature h3{
+  margin:0 0 6px;
+  font-size:22px;
+}
+.feature p{
+  margin:0;
+  color:var(--muted);
+  font-size:15px;
+}
+.section{
+  padding:46px 0;
+}
+.section-dark{
+  background:
+    radial-gradient(circle at top left, rgba(202,167,90,.08), transparent 24%),
+    #0b0b0b;
+}
+.section-title{
+  text-align:center;
+  max-width:860px;
+  margin:0 auto 26px;
+}
+.section-title h2{
+  margin:0;
+  font-size:42px;
+  line-height:.98;
+  letter-spacing:-.03em;
+}
+.section-title p{
+  margin:14px auto 0;
+  color:var(--muted);
+  font-size:18px;
+  max-width:760px;
+}
+.cards{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+}
+.card{
+  background:#151515;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+  overflow:hidden;
+}
+.card-image{
+  aspect-ratio:16/11;
+  background-size:cover;
+  background-position:center;
+}
+.card-body{
+  background:#f5f2ee;
+  color:#111;
+  padding:18px;
+}
+.card h3{
+  margin:0 0 10px;
+  font-size:28px;
+  line-height:1;
+}
 .card p{
-  margin:0 10px 10px;
-  color:#444;
+  margin:0 0 16px;
+  color:#333;
+  font-size:16px;
 }
-
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:20px;
+  align-items:center;
+}
+.about-box{
+  background:#f7f5f1;
+  color:#111;
+  border-radius:16px;
+  padding:24px;
+}
+.about-box h2{
+  margin:0 0 14px;
+  font-size:40px;
+  line-height:.98;
+}
+.about-box p{
+  margin:0 0 18px;
+  color:#444;
+  font-size:17px;
+}
+.about-image{
+  border-radius:16px;
+  min-height:260px;
+  background:
+    url("https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1200&q=80") center/cover no-repeat;
+}
+.contact{
+  background:#0b0b0b;
+  border-top:1px solid var(--line);
+}
+.contact-box{
+  background:#141414;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+  padding:22px;
+}
+.contact-box h2{
+  margin:0 0 12px;
+  font-size:34px;
+}
+.contact-box p{
+  margin:0 0 16px;
+  color:var(--muted);
+}
+.contact-list{
+  display:grid;
+  gap:12px;
+}
+.contact-item{
+  padding:14px 16px;
+  background:#1a1a1a;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.06);
+}
+.footer{
+  padding:24px 0 34px;
+  color:#cfcfcf;
+  font-size:14px;
+  text-align:center;
+}
+@media (min-width:700px){
+  .hero h1{font-size:72px}
+  .hero-actions .btn{width:auto}
+  .feature-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+  .feature{
+    border-bottom:none;
+    border-right:1px solid var(--line);
+    padding:22px 18px;
+  }
+  .feature:last-child{border-right:none}
+  .cards{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+@media (min-width:980px){
+  .container{width:min(var(--max), calc(100% - 48px))}
+  .nav-links{display:flex}
+  .hero-inner{
+    min-height:620px;
+    display:flex;
+    align-items:center;
+  }
+  .hero h1{font-size:88px}
+  .hero-text{font-size:22px}
+  .about-grid{
+    grid-template-columns:1.05fr .95fr;
+    gap:28px;
+  }
+}
 </style>
 </head>
-
 <body>
 
-<header>
-  <div class="logo">OWENS CABLE RAILINGS LLC</div>
-  <a href="tel:5738738440" class="btn">GET A QUOTE</a>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="#top">
+      <div class="logo-circle">OR</div>
+      <div class="brand-text">
+        <span class="big">OWENS</span>
+        <span class="small">CABLE RAILINGS LLC</span>
+      </div>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#top">HOME</a>
+      <a href="#about">ABOUT US</a>
+      <a href="#services">SERVICES</a>
+      <a href="#projects">PROJECTS</a>
+      <a href="#reviews">REVIEWS</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+
+    <a class="btn btn-gold header-btn" href="tel:5738738440">GET A QUOTE</a>
+  </div>
 </header>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>STRONG. MODERN.<br>BUILT TO LAST.</h1>
-    <p>Premium cable railing installation for decks, balconies, and stairs.</p>
+<section class="hero" id="top">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow">Premium Cable Railing Solutions</p>
+      <h1>STRONG. MODERN.<br>BUILT TO LAST.</h1>
+      <p class="hero-text">
+        We specialize in high-quality cable railing systems for decks, balconies, staircases, and more.
+        Built with precision. Designed for your view.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="tel:5738738440">GET A FREE QUOTE</a>
+        <a class="btn btn-dark" href="tel:5738738440">(573) 873-8440</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="section">
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80">
-    <h2>Deck Railings</h2>
-    <p>Modern cable railing systems designed for durability and open views.</p>
+<section class="feature-bar">
+  <div class="container feature-grid">
+    <div class="feature">
+      <h3>Durable & Strong</h3>
+      <p>Built with high-quality materials for long-lasting performance.</p>
+    </div>
+    <div class="feature">
+      <h3>Unobstructed Views</h3>
+      <p>Sleek cable designs that maximize your view.</p>
+    </div>
+    <div class="feature">
+      <h3>Custom Fit</h3>
+      <p>Tailored solutions for any space or style.</p>
+    </div>
   </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80">
-    <h2>Balcony Railings</h2>
-    <p>Clean, high-end cable railing that elevates your home.</p>
-  </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=80">
-    <h2>Staircase Railings</h2>
-    <p>Safe and stylish railing systems for indoor and outdoor stairs.</p>
-  </div>
-
 </section>
+
+<section class="section section-dark" id="services">
+  <div class="container">
+    <div class="section-title">
+      <p class="eyebrow">Our Services</p>
+      <h2>Expert Cable Railing Installation</h2>
+      <p>
+        Transform your property with sleek, safe, and sturdy cable railing solutions.
+        We provide custom installations tailored to your specific needs and style.
+      </p>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-image" style='background-image:url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80")'></div>
+        <div class="card-body">
+          <h3>Deck Railings</h3>
+          <p>Enhance your outdoor living space with sleek, durable cable railings offering an unobstructed view.</p>
+          <a class="btn btn-gold" href="tel:5738738440">LEARN MORE</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-image" style='background-image:url("https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80")'></div>
+        <div class="card-body">
+          <h3>Balcony Railings</h3>
+          <p>Upgrade your balcony with clean, elegant, high-strength cable railings built to last.</p>
+          <a class="btn btn-gold" href="tel:5738738440">LEARN MORE</a>
+        </div>
+      </article>
+
+      <article class="card" id="projects">
+        <div class="card-image" style='background-image:url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80&sat=-10")'></div>
+        <div class="card-body">
+          <h3>Staircase Railings</h3>
+          <p>Modernize your interior or exterior stairs with stylish, safe cable railings designed to fit precisely.</p>
+          <a class="btn btn-gold" href="tel:5738738440">LEARN MORE</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div class="about-box">
+      <p class="eyebrow">About Us</p>
+      <h2>BUILT ON QUALITY.<br>FOCUSED ON YOU.</h2>
+      <p>
+        At Owens Cable Railings LLC, we take pride in delivering top-tier cable railing systems
+        that combine safety, strength, and modern design. Whether it’s a residential deck,
+        balcony, or staircase, we bring your vision to life with precision and professionalism.
+      </p>
+      <a class="btn btn-gold" href="tel:5738738440">LEARN MORE</a>
+    </div>
+    <div class="about-image"></div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <p class="eyebrow">Get A Free Quote</p>
+      <h2>Ready to Upgrade Your View?</h2>
+      <p>Call or text Micheal Owens today for a free estimate.</p>
+
+      <div class="contact-list">
+        <div class="contact-item"><strong>Owner:</strong> Micheal Owens</div>
+        <div class="contact-item"><strong>Phone:</strong> <a href="tel:5738738440">(573) 873-8440</a></div>
+        <div class="contact-item"><strong>Business:</strong> Owens Cable Railings LLC</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" id="reviews">
+  <div class="container">
+    Owens Cable Railings LLC • Premium cable railing installation
+  </div>
+</footer>
 
 </body>
 </html>
