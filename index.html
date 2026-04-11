@@ -9,13 +9,10 @@
 :root{
   --bg:#0a0a0a;
   --panel:#111111;
-  --panel2:#171717;
   --text:#f5f5f5;
   --muted:#d3d3d3;
   --gold:#caa75a;
-  --gold2:#b99243;
   --line:rgba(255,255,255,.10);
-  --radius:18px;
   --max:1200px;
 }
 *{box-sizing:border-box}
@@ -28,7 +25,6 @@ body{
   line-height:1.45;
 }
 a{text-decoration:none;color:inherit}
-img{display:block;max-width:100%}
 .container{
   width:min(var(--max), calc(100% - 24px));
   margin:0 auto;
@@ -37,7 +33,6 @@ img{display:block;max-width:100%}
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap:10px;
   min-height:52px;
   padding:0 20px;
   border-radius:10px;
@@ -105,7 +100,6 @@ img{display:block;max-width:100%}
   font-weight:700;
   font-size:14px;
 }
-.nav-links a:hover{color:var(--gold)}
 .header-btn{
   min-height:44px;
   padding:0 16px;
@@ -258,8 +252,7 @@ img{display:block;max-width:100%}
 .about-image{
   border-radius:16px;
   min-height:260px;
-  background:
-    url("hero-main.png") center/cover no-repeat;
+  background:url("hero-main.png") center/cover no-repeat;
 }
 .contact{
   background:#0b0b0b;
