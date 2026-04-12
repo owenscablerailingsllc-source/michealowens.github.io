@@ -720,51 +720,38 @@
       </div>
     </section>
 
-    <section id="review">
-      <div class="container">
-        <div class="review-box">
-          <div class="eyebrow">Customer Feedback</div>
-          <h2>Leave a Review</h2>
-          <p>
-            We appreciate your feedback. If we completed a project for you, we’d love to hear about your experience.
-          </p>
+<section id="review">
+  <div class="container">
+    <div class="review-box">
+      <div class="eyebrow">Customer Feedback</div>
+      <h2>Leave a Review</h2>
+      <p>We appreciate your feedback. Reviews appear live on the website.</p>
 
-          <form class="review-form" action="mailto:owenscablerailingsllc@gmail.com" method="post" enctype="text/plain">
-            <input type="text" name="Name" placeholder="Your Name" required>
-            <input type="email" name="Email" placeholder="Your Email">
+      <form class="review-form" id="reviewForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="text" id="project" placeholder="Project Type">
 
-            <div class="rating-wrap full">
-              <label class="rating-label">Rate Your Experience</label>
-              <div class="star-rating">
-                <input type="radio" id="star5" name="Rating" value="5 stars" required>
-                <label for="star5">★</label>
-
-                <input type="radio" id="star4" name="Rating" value="4 stars">
-                <label for="star4">★</label>
-
-                <input type="radio" id="star3" name="Rating" value="3 stars">
-                <label for="star3">★</label>
-
-                <input type="radio" id="star2" name="Rating" value="2 stars">
-                <label for="star2">★</label>
-
-                <input type="radio" id="star1" name="Rating" value="1 star">
-                <label for="star1">★</label>
-              </div>
-            </div>
-
-            <input type="text" name="Project Type" placeholder="Project Type">
-            <textarea class="full" name="Review" placeholder="Write your review here..." required></textarea>
-            <button type="submit" class="btn full">SUBMIT REVIEW</button>
-          </form>
-
-          <div class="form-note">
-            This form may open your email app to send your review.
+        <div class="rating-wrap full">
+          <label class="rating-label">Rate Your Experience</label>
+          <div class="star-rating">
+            <input type="radio" id="star5" name="rating" value="5" required><label for="star5">★</label>
+            <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+            <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+            <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+            <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
           </div>
         </div>
-      </div>
-    </section>
 
+        <textarea class="full" id="message" placeholder="Write your review here..." required></textarea>
+        <button type="submit" class="btn full">SUBMIT REVIEW</button>
+      </form>
+
+      <div class="form-note">Reviews are posted instantly after submission.</div>
+
+      <div id="reviewsList" style="margin-top:24px;"></div>
+    </div>
+  </div>
+</section>
     <section class="contact" id="quote">
       <div class="container">
         <div class="contact-box">
