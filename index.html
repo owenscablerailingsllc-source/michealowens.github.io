@@ -795,8 +795,76 @@
   </footer>
 
 <script type="module">
-/* firebase code goes here */
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  query,
+  orderBy,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDlui3X3HvCeiC52W_Vqs8rSQzQi5riz2A",
+  authDomain: "owens-cable-railings-llc.firebaseapp.com",
+  projectId: "owens-cable-railings-llc",
+  storageBucket: "owens-cable-railings-llc.firebasestorage.app",
+  messagingSenderId: "999651019725",
+  appId: "1:999651019725:web:995c7d03f78c210e4b5284",
+  measurementId: "G-ZLJV9BMXVX"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const form = document.getElementById("reviewForm");
+const reviewsList = document.getElementById("reviewsList");
+
+async function loadReviews() {
+  reviewsList.innerHTML = "";
+
+  const q = query(collection(db, "reviews"), orderBy("created", "desc"));
+  const snap = await getDocs(q);
+
+  snap.forEach((item) => {
+    const r = item.data();
+
+    reviewsList.innerHTML += `
+      <div style="background:#171717;padding:18px;border-radius:16px;margin-top:14px;border:1px solid rgba(255,255,255,.08);">
+        <h3 style="margin:0;">${r.name}</h3>
+        <p style="margin:6px 0;color:#d0ab5b;">${"★".repeat(r.rating)}</p>
+        <p style="margin:6px 0;color:#ccc;"><strong>Project:</strong> ${r.project || "General"}</p>
+        <p style="margin:0;">${r.message}</p>
+      </div>
+    `;
+  });
+}
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const project = document.getElementById("project").value;
+  const message = document.getElementById("message").value;
+  const rating = document.querySelector('input[name="rating"]:checked')?.value;
+
+  await addDoc(collection(db, "reviews"), {
+    name,
+    project,
+    message,
+    rating: Number(rating),
+    created: serverTimestamp()
+  });
+
+  form.reset();
+  loadReviews();
+});
+
+loadReviews();
 </script>
+
 
 </body>
 </html>
