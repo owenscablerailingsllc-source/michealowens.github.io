@@ -380,7 +380,6 @@
     }
 
     .review-form input,
-    .review-form select,
     .review-form textarea{
       width:100%;
       padding:16px;
@@ -394,7 +393,6 @@
     }
 
     .review-form input:focus,
-    .review-form select:focus,
     .review-form textarea:focus{
       border-color:rgba(208,171,91,.65);
     }
@@ -402,6 +400,43 @@
     .review-form textarea{
       min-height:150px;
       resize:vertical;
+    }
+
+    .rating-wrap{
+      margin:4px 0 0;
+    }
+
+    .rating-label{
+      display:block;
+      font-size:18px;
+      font-weight:700;
+      margin-bottom:12px;
+      color:var(--text);
+    }
+
+    .star-rating{
+      display:flex;
+      flex-direction:row-reverse;
+      justify-content:flex-end;
+      gap:6px;
+    }
+
+    .star-rating input{
+      display:none;
+    }
+
+    .star-rating label{
+      font-size:42px;
+      line-height:1;
+      color:#444;
+      cursor:pointer;
+      transition:.2s ease;
+    }
+
+    .star-rating label:hover,
+    .star-rating label:hover ~ label,
+    .star-rating input:checked ~ label{
+      color:var(--gold);
     }
 
     .form-note{
@@ -531,6 +566,10 @@
 
       .hero-trust{
         font-size:14px;
+      }
+
+      .star-rating label{
+        font-size:38px;
       }
     }
   </style>
@@ -684,30 +723,43 @@
     <section id="review">
       <div class="container">
         <div class="review-box">
-          <div class="eyebrow">Leave a Review</div>
-          <h2>How Was Your Experience?</h2>
+          <div class="eyebrow">Customer Feedback</div>
+          <h2>Leave a Review</h2>
           <p>
-            We appreciate your feedback. If we completed a project for you, leave a review below.
+            We appreciate your feedback. If we completed a project for you, we’d love to hear about your experience.
           </p>
 
           <form class="review-form" action="mailto:owenscablerailingsllc@gmail.com" method="post" enctype="text/plain">
             <input type="text" name="Name" placeholder="Your Name" required>
             <input type="email" name="Email" placeholder="Your Email">
-            <select name="Rating" required>
-              <option value="">Select Rating</option>
-              <option>★★★★★</option>
-              <option>★★★★☆</option>
-              <option>★★★☆☆</option>
-              <option>★★☆☆☆</option>
-              <option>★☆☆☆☆</option>
-            </select>
-            <input type="text" name="Project Type" placeholder="Project Type (Deck, Balcony, Stairs)">
+
+            <div class="rating-wrap full">
+              <label class="rating-label">Rate Your Experience</label>
+              <div class="star-rating">
+                <input type="radio" id="star5" name="Rating" value="5 stars" required>
+                <label for="star5">★</label>
+
+                <input type="radio" id="star4" name="Rating" value="4 stars">
+                <label for="star4">★</label>
+
+                <input type="radio" id="star3" name="Rating" value="3 stars">
+                <label for="star3">★</label>
+
+                <input type="radio" id="star2" name="Rating" value="2 stars">
+                <label for="star2">★</label>
+
+                <input type="radio" id="star1" name="Rating" value="1 star">
+                <label for="star1">★</label>
+              </div>
+            </div>
+
+            <input type="text" name="Project Type" placeholder="Project Type">
             <textarea class="full" name="Review" placeholder="Write your review here..." required></textarea>
             <button type="submit" class="btn full">SUBMIT REVIEW</button>
           </form>
 
           <div class="form-note">
-            Submitting this form may open your email app so you can send the review directly.
+            This form may open your email app to send your review.
           </div>
         </div>
       </div>
