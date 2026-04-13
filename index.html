@@ -912,6 +912,20 @@ loadReviews();
 <a href="sms:5738738440&body=Hi%20Owens%20Cable%20Railings%2C%20I%E2%80%99m%20looking%20for%20a%20quote%20for%20my%20project." class="floating-text-btn">
   Text for Fast Quote
 </a>
+<script>
+const slider = document.getElementById("sliderRange");
+const afterWrap = document.getElementById("afterImageWrap");
+const line = document.getElementById("sliderLine");
+const handle = document.getElementById("sliderHandle");
 
+if (slider && afterWrap && line && handle) {
+  slider.addEventListener("input", function () {
+    const val = this.value + "%";
+    afterWrap.style.width = val;
+    line.style.left = val;
+    handle.style.left = val;
+  });
+}
+</script>
 </body>
 </html>
