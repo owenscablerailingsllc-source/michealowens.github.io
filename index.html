@@ -1005,10 +1005,17 @@ loadReviews();
 <script>
 const menuToggle = document.getElementById("menuToggle");
 const siteMenu = document.getElementById("siteMenu");
+const menuLinks = document.querySelectorAll("#siteMenu a");
 
 if(menuToggle && siteMenu){
   menuToggle.addEventListener("click", () => {
     siteMenu.classList.toggle("show");
+  });
+
+  menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      siteMenu.classList.remove("show");
+    });
   });
 }
 </script>
