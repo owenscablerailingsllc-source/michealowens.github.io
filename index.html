@@ -135,11 +135,34 @@
   line-height:1;
 }
 
-    .nav .btn{
-      padding:14px 18px;
-      border-radius:14px;
-      white-space:nowrap;
-    }
+    .menu-toggle{
+  display:none;
+  background:var(--gold);
+  color:#111;
+  border:none;
+  border-radius:14px;
+  padding:12px 16px;
+  font-size:22px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.site-menu{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.site-menu a{
+  color:var(--text);
+  font-weight:700;
+  font-size:14px;
+  text-decoration:none;
+}
+
+.site-menu a:hover{
+  color:var(--gold);
+}
 
     .hero{
       padding:16px 0 18px;
@@ -487,7 +510,38 @@
     }
 
     @media (max-width:920px){
-      .services-grid,
+      .menu-toggle{
+  display:block;
+}
+
+.site-menu{
+  display:none;
+  position:absolute;
+  top:100%;
+  right:14px;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:14px;
+  flex-direction:column;
+  align-items:flex-start;
+  min-width:220px;
+  box-shadow:0 12px 30px rgba(0,0,0,.25);
+  z-index:999;
+}
+
+.site-menu.show{
+  display:flex;
+}
+
+.nav{
+  position:relative;
+}
+
+.site-menu a{
+  width:100%;
+  padding:8px 0;
+}.services-grid,
       .contact-grid,
       .badge-grid,
       .split,
@@ -610,7 +664,16 @@ font-size:17px;
         </div>
       </a>
 
-      <a href="#quote" class="btn">GET A QUOTE</a>
+      <button class="menu-toggle" id="menuToggle">☰</button>
+
+<nav class="site-menu" id="siteMenu">
+  <a href="#home">Home</a>
+  <a href="#service-area">Service Area</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#how-it-works">How It Works</a>
+  <a href="#review">Reviews</a>
+  <a href="#quote">Quote</a>
+</nav>
     </div>
   </header>
 
@@ -635,7 +698,7 @@ font-size:17px;
       </div>
     </section>
 
-    <section class="badges">
+    <section class="badges" id="home">
       <div class="container badge-grid">
         <div class="badge">
           <h3>Durable & Strong</h3>
@@ -652,7 +715,7 @@ font-size:17px;
       </div>
     </section>
 
-<section>
+<section id="service-area">
   <div class="container">
     <div class="section-head">
       <div class="eyebrow">Service Area</div>
@@ -742,7 +805,7 @@ font-size:17px;
           </div>
         </div>
       </div>
-    </section>
+    <section id="gallery">
 
     <div class="section-head">
   <div class="eyebrow">Gallery</div>
@@ -758,7 +821,7 @@ font-size:17px;
         </div>
       </div>
     </section>
-<section>
+<section id="how-it-works
   <div class="container">
     <div class="section-head">
       <div class="eyebrow">How It Works</div>
