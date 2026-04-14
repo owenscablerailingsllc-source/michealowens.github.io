@@ -1002,6 +1002,15 @@ loadReviews();
 <a href="sms:5738738440&body=Hi%20Owens%20Cable%20Railings%2C%20I%E2%80%99m%20looking%20for%20a%20quote%20for%20my%20project." class="floating-text-btn">
   Text for Fast Quote
 </a>
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const siteMenu = document.getElementById("siteMenu");
 
+if(menuToggle && siteMenu){
+  menuToggle.addEventListener("click", () => {
+    siteMenu.classList.toggle("show");
+  });
+}
+</script>
 </body>
 </html>
