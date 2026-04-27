@@ -1,965 +1,147 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Owens Cable Railings LLC</title>
-  <meta name="description" content="Custom cable railing installation for decks, balconies, and staircases. Free estimates from Owens Cable Railings LLC.">
-  <style>
-    :root{
-      --bg:#0b0b0b;
-      --panel:#111111;
-      --panel-2:#171717;
-      --text:#f4f4f4;
-      --muted:#c9c9c9;
-      --gold:#d0ab5b;
-      --gold-dark:#b88d35;
-      --line:rgba(255,255,255,.08);
-      --white-card:#f3f0eb;
-      --dark-text:#111;
-      --max:1150px;
-      --radius:22px;
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Owens Cable Railings LLC — Premium Installations</title>
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Barlow:wght@400;600;700&family=Barlow+Condensed:wght@500;700&display=swap" rel="stylesheet">
 
-    body{
-      margin:0;
-      font-family:Arial, Helvetica, sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.5;
-    }
-
-    img{
-      max-width:100%;
-      display:block;
-    }
-
-    a{
-      color:inherit;
-      text-decoration:none;
-    }
-
-    .container{
-      width:min(calc(100% - 28px), var(--max));
-      margin:0 auto;
-    }
-
-    .btn{
-      display:inline-block;
-      background:var(--gold);
-      color:#111;
-      font-weight:700;
-      padding:16px 24px;
-      border-radius:16px;
-      transition:.2s ease;
-      border:none;
-      cursor:pointer;
-    }
-
-    .btn:hover{
-      background:var(--gold-dark);
-    }
-
-    .btn-outline{
-      display:inline-block;
-      border:1px solid rgba(208,171,91,.5);
-      color:var(--text);
-      padding:15px 22px;
-      border-radius:16px;
-      font-weight:700;
-      transition:.2s ease;
-    }
-
-    .btn-outline:hover{
-      border-color:var(--gold);
-      background:rgba(208,171,91,.08);
-    }
-
-    header{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(8,8,8,.94);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line);
-  padding:6px 0;
+<style>
+:root{
+--black:#080808;
+--dark:#0f0f0e;
+--gold:#c9a84c;
+--white:#f7f4ee;
+--muted:#9e9b93;
+--line:rgba(255,255,255,.07);
 }
 
-   .nav{
-  min-height:82px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-  padding:10px 0;
-}
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      min-width:0;
-    }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Barlow',sans-serif;background:var(--black);color:var(--white)}
 
-    .logo{
-  width:72px;
-  height:72px;
-  border:3px solid var(--gold);
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  color:var(--gold);
-  font-weight:800;
-  font-size:28px;
-  flex-shrink:0;
+.wrap{width:90%;max-width:1200px;margin:auto}
+
+/* HEADER */
+header{position:fixed;width:100%;top:0;background:rgba(0,0,0,.8);padding:20px;z-index:10}
+.nav{display:flex;justify-content:space-between;align-items:center}
+
+.nav a{color:var(--white);margin-left:20px;text-decoration:none;font-size:14px}
+
+.logo{font-weight:700;letter-spacing:2px}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+background:url('IMG_5607.png') center/cover no-repeat;
+position:relative;
 }
 
-    .brand-text{
-      min-width:0;
-    }
-
-    .brand-text h1{
-  margin:0;
-  font-size:24px;
-  line-height:1;
-  letter-spacing:.05em;
+.hero::after{
+content:'';
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.6);
 }
 
-    .brand-text p{
-  margin:4px 0 0;
-  font-size:13px;
-  color:#ddd;
-  letter-spacing:.22em;
-  line-height:1;
+.hero-content{
+position:relative;
+z-index:2;
 }
 
-    .menu-toggle{
-  display:none;
-  background:var(--gold);
-  color:#111;
-  border:none;
-  border-radius:14px;
-  padding:12px 16px;
-  font-size:22px;
-  font-weight:800;
-  cursor:pointer;
+.hero h1{
+font-family:'Cormorant Garamond',serif;
+font-size:60px;
+margin-bottom:20px;
 }
 
-.site-menu{
-  display:flex;
-  align-items:center;
-  gap:18px;
+.btn{
+display:inline-block;
+padding:14px 28px;
+background:var(--gold);
+color:black;
+text-decoration:none;
+margin-top:20px;
 }
 
-.site-menu a{
-  color:var(--text);
-  font-weight:700;
-  font-size:14px;
-  text-decoration:none;
+/* SECTION */
+section{padding:80px 0}
+
+/* REVIEWS */
+.review{
+border:1px solid var(--line);
+padding:20px;
+margin-top:20px;
 }
 
-.site-menu a:hover{
-  color:var(--gold);
+/* CONTACT */
+.contact a{display:block;margin:10px 0;color:var(--gold)}
+
+/* MOBILE */
+@media(max-width:768px){
+.hero h1{font-size:40px}
 }
-
-    .hero{
-      padding:16px 0 18px;
-    }
-
-    .hero-wrap{
-      position:relative;
-      overflow:hidden;
-      border-radius:28px;
-      min-height:620px;
-      display:flex;
-      align-items:end;
-      background-image:
-        linear-gradient(to bottom, rgba(0,0,0,.34), rgba(0,0,0,.62)),
-        url('./IMG_5607.png');
-      background-size:cover;
-      background-position:center;
-      background-repeat:no-repeat;
-      box-shadow:0 10px 35px rgba(0,0,0,.28);
-    }
-
-    .hero-content{
-      padding:28px;
-      max-width:760px;
-    }
-
-    .eyebrow{
-      color:var(--gold);
-      font-size:14px;
-      font-weight:700;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      margin-bottom:14px;
-    }
-
-    .hero h2{
-      margin:0 0 14px;
-      font-size:clamp(40px, 8vw, 78px);
-      line-height:.95;
-      letter-spacing:-.04em;
-    }
-
-    .hero p{
-      margin:0 0 24px;
-      font-size:clamp(18px, 2.8vw, 24px);
-      color:#ededed;
-      max-width:640px;
-    }
-
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-    }
-
-    .hero-trust{
-      margin-top:16px;
-      font-size:15px;
-      color:#e5e5e5;
-      opacity:.95;
-    }
-
-    .badges{
-      padding:18px 0 10px;
-    }
-
-    .badge-grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:14px;
-    }
-
-    .badge{
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:18px;
-    }
-
-    .badge h3{
-      margin:0 0 6px;
-      font-size:21px;
-    }
-
-    .badge p{
-      margin:0;
-      color:var(--muted);
-      font-size:15px;
-    }
-
-    section{
-      padding:34px 0;
-    }
-
-    .section-head{
-      text-align:center;
-      margin-bottom:20px;
-    }
-
-    .section-head .eyebrow{
-      margin-bottom:10px;
-    }
-
-    .section-head h2{
-      margin:0 0 8px;
-      font-size:clamp(32px, 7vw, 56px);
-      line-height:1;
-      letter-spacing:-.04em;
-    }
-
-    .section-head p{
-      margin:0 auto;
-      max-width:760px;
-      color:var(--muted);
-      font-size:18px;
-    }
-
-    .services-grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:18px;
-    }
-
-    .card{
-      overflow:hidden;
-      border-radius:24px;
-      background:var(--white-card);
-      color:var(--dark-text);
-      box-shadow:0 8px 28px rgba(0,0,0,.10);
-    }
-
-    .card img{
-      width:100%;
-      aspect-ratio:4 / 3;
-      object-fit:cover;
-    }
-
-    .card-body{
-      padding:24px;
-    }
-
-    .card h3{
-      margin:0 0 10px;
-      font-size:24px;
-      line-height:1.05;
-    }
-
-    .card p{
-      margin:0 0 18px;
-      color:#3f3f3f;
-      font-size:18px;
-    }
-
-    .split{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:20px;
-      align-items:stretch;
-    }
-
-    .panel{
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:24px;
-      padding:28px;
-    }
-
-    .panel h2{
-      margin:0 0 16px;
-      font-size:clamp(34px, 6vw, 62px);
-      line-height:.95;
-      letter-spacing:-.04em;
-    }
-
-    .panel p{
-      margin:0 0 18px;
-      color:var(--muted);
-      font-size:18px;
-    }
-
-    .checklist{
-      display:grid;
-      gap:12px;
-      margin-top:18px;
-    }
-
-    .check{
-      padding:14px 16px;
-      background:var(--panel-2);
-      border:1px solid var(--line);
-      border-radius:16px;
-      font-weight:600;
-    }
-
-    .gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(2, minmax(0,1fr));
-  gap:18px;
-  align-items:stretch;
-}
-
-    .gallery-grid img{
-      width:100%;
-      border-radius:22px;
-      aspect-ratio:4 / 3;
-      object-fit:cover;
-    }
-
-    .review-box,
-    .contact-box{
-      background:linear-gradient(180deg, #121212, #0d0d0d);
-      border:1px solid var(--line);
-      border-radius:28px;
-      padding:28px;
-    }
-
-    .review-box h2,
-    .contact-box h2{
-      margin:0 0 12px;
-      font-size:clamp(36px, 7vw, 64px);
-      line-height:1;
-      letter-spacing:-.04em;
-    }
-
-    .review-box p,
-    .contact-box p{
-      margin:0 0 24px;
-      color:var(--muted);
-      font-size:19px;
-      max-width:760px;
-    }
-
-    .review-form{
-      display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:14px;
-    }
-
-    .review-form .full{
-      grid-column:1 / -1;
-    }
-
-    .review-form input,
-    .review-form textarea{
-      width:100%;
-      padding:16px;
-      border-radius:16px;
-      border:1px solid var(--line);
-      background:var(--panel);
-      color:var(--text);
-      font-size:16px;
-      font-family:Arial, Helvetica, sans-serif;
-      outline:none;
-    }
-
-    .review-form input:focus,
-    .review-form textarea:focus{
-      border-color:rgba(208,171,91,.65);
-    }
-
-    .review-form textarea{
-      min-height:150px;
-      resize:vertical;
-    }
-
-    .rating-wrap{
-      margin:4px 0 0;
-    }
-
-    .rating-label{
-      display:block;
-      font-size:18px;
-      font-weight:700;
-      margin-bottom:12px;
-      color:var(--text);
-    }
-
-    .star-rating{
-      display:flex;
-      flex-direction:row-reverse;
-      justify-content:flex-end;
-      gap:6px;
-    }
-
-    .star-rating input{
-      display:none;
-    }
-
-    .star-rating label{
-      font-size:42px;
-      line-height:1;
-      color:#444;
-      cursor:pointer;
-      transition:.2s ease;
-    }
-
-    .star-rating label:hover,
-    .star-rating label:hover ~ label,
-    .star-rating input:checked ~ label{
-      color:var(--gold);
-    }
-
-    .form-note{
-      font-size:14px;
-      color:#a9a9a9;
-      margin-top:14px;
-    }
-
-    .contact{
-      padding-bottom:46px;
-    }
-
-    .contact-grid{
-      display:grid;
-      grid-template-columns:repeat(4, 1fr);
-      gap:14px;
-    }
-
-    .contact-item{
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:18px;
-    }
-
-    .contact-item strong{
-      display:block;
-      margin-bottom:6px;
-      font-size:18px;
-    }
-
-    .contact-item span,
-    .contact-item a{
-      color:#eaeaea;
-      font-size:18px;
-      word-break:break-word;
-    }
-
-    footer{
-      border-top:1px solid var(--line);
-      color:#bfbfbf;
-      padding:22px 0 34px;
-      text-align:center;
-      font-size:15px;
-    }
-.steps-grid{
-  display:grid;
-  grid-template-columns:repeat(4, minmax(0,1fr));
-  gap:18px;
-}
-
-.step-card{
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:22px;
-}
-
-.step-card h3{
-  margin:0 0 8px;
-  font-size:22px;
-}
-
-.step-card p{
-  margin:0;
-  color:var(--muted);
-  font-size:16px;
-}
-   @media (max-width:920px){
-      .menu-toggle{
-  display:block;
-}
-
-.site-menu{
-  display:none;
-  position:absolute;
-  top:100%;
-  right:14px;
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:14px;
-  flex-direction:column;
-  align-items:flex-start;
-  min-width:220px;
-  box-shadow:0 12px 30px rgba(0,0,0,.25);
-  z-index:999;
-}
-
-.site-menu.show{
-  display:flex;
-}
-
-.nav{
-  position:relative;
-}
-
-.site-menu a{
-  width:100%;
-  padding:8px 0;
-}.services-grid,
-.contact-grid,
-.badge-grid,
-.steps-grid,
-.split,
-.gallery-grid,
-.review-form{
-        grid-template-columns:1fr;
-      }
-
-      .hero-wrap{
-        min-height:560px;
-      }
-
-      .hero-content{
-        padding:22px;
-      }
-
-      .nav{
-        min-height:auto;
-      }
-
-      .nav .btn{
-        padding:12px 14px;
-        font-size:14px;
-      }
-
-      .brand-text h1{
-        font-size:16px;
-      }
-
-      .brand-text p{
-        font-size:11px;
-        letter-spacing:.12em;
-      }
-
-      .review-form .full{
-        grid-column:auto;
-      }
-    }
-
-    .floating-text-btn{
-  position:fixed;
-  right:18px;
-  bottom:18px;
-  z-index:999;
-  background:var(--gold);
-  color:#111;
-  font-weight:800;
-  padding:14px 18px;
-  border-radius:999px;
-  box-shadow:0 10px 25px rgba(0,0,0,.25);
-  font-size:15px;
-  text-decoration:none;
-  transition:.2s ease;
-}
-
-.floating-text-btn:hover{
-  background:var(--gold-dark);
-  transform:translateY(-2px);
-}
-
-@media (max-width:560px){
-      .container{
-        width:min(calc(100% - 20px), var(--max));
-      }
-
-      .logo{
-        width:54px;
-height:54px;
-font-size:17px;
-      }
-
-      .hero{
-        padding-top:10px;
-      }
-
-      .hero-wrap{
-        min-height:520px;
-        border-radius:22px;
-      }
-
-      .hero-content{
-        padding:18px;
-      }
-
-      .hero p,
-      .section-head p,
-      .panel p,
-      .contact-box p,
-      .review-box p,
-      .card p{
-        font-size:17px;
-      }
-
-      .card-body,
-      .panel,
-      .contact-box,
-      .review-box{
-        padding:20px;
-      }
-
-      .hero-trust{
-        font-size:14px;
-      }
-
-      .star-rating label{
-        font-size:38px;
-      }
-    }
-  </style>
+</style>
 </head>
+
 <body>
 
-  <header>
-    <div class="container nav">
-      <a href="#" class="brand">
-        <div class="logo">OCR</div>
-        <div class="brand-text">
-          <h1>OWENS</h1>
-          <p>CABLE RAILINGS LLC</p>
-        </div>
-      </a>
-
-      <button class="menu-toggle" id="menuToggle">☰</button>
-
-<nav class="site-menu" id="siteMenu">
-  <a href="#home">Home</a>
-  <a href="#service-area">Service Area</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#how-it-works">How It Works</a>
-  <a href="#review">Reviews</a>
-  <a href="#quote">Quote</a>
-</nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero" id="home">
-      <div class="container">
-        <div class="hero-wrap">
-          <div class="hero-content">
-            <div class="eyebrow">Premium Cable Railing Installation</div>
-            <h2>Strong. Clean. Built to Last.</h2>
-            <p>
-              Custom cable railing systems for decks, balconies, and staircases.
-              Modern looks, durable materials, and clean installs designed around your space.
-            </p>
-            <div class="hero-actions">
-              <a href="#quote" class="btn">GET A FREE QUOTE</a>
-              <a href="tel:5738738440" class="btn-outline">CALL (573) 873-8440</a>
-            </div>
-            <div class="hero-trust">Free Estimates • Custom Installations • Owner Operated</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="badges">
-      <div class="container badge-grid">
-        <div class="badge">
-          <h3>Durable & Strong</h3>
-          <p>Built with high-quality materials for long-lasting performance.</p>
-        </div>
-        <div class="badge">
-          <h3>Unobstructed Views</h3>
-          <p>Clean cable lines that keep your view open and modern.</p>
-        </div>
-        <div class="badge">
-          <h3>Custom Fit</h3>
-          <p>Every project is tailored to your layout, style, and needs.</p>
-        </div>
-      </div>
-    </section>
-
-<section id="service-area">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Service Area</div>
-      <h2>Proudly Serving Lake Area Homeowners</h2>
-      <p>
-        Owens Cable Railings LLC proudly serves homeowners and properties
-        throughout the Lake of the Ozarks region and surrounding communities.
-      </p>
-    </div>
-
-    <div class="steps-grid">
-      <div class="badge">
-        <h3>Osage Beach</h3>
-        <p>Deck, balcony, and staircase cable railing installs.</p>
-      </div>
-
-      <div class="badge">
-        <h3>Lake Ozark</h3>
-        <p>Modern railing upgrades for homes and lake properties.</p>
-      </div>
-
-      <div class="badge">
-        <h3>Camdenton & Nearby</h3>
-        <p>Serving surrounding areas with custom-fit installations.</p>
-      </div>
+<header>
+  <div class="wrap nav">
+    <div class="logo">OWENS</div>
+    <div>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#quote">Quote</a>
     </div>
   </div>
-</section>    
-    
-<section>
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Why Cable Railing</div>
-      <h2>Modern Looks. Real Benefits.</h2>
-      <p>
-        Cable railing gives your home a clean modern style while keeping views open,
-        improving durability, and reducing maintenance compared to many traditional rail systems.
-      </p>
-    </div>
+</header>
 
-    <div class="badge-grid">
-      <div class="badge">
-        <h3>Open View</h3>
-        <p>Thin horizontal cables help preserve your lake, yard, or deck view.</p>
-      </div>
-
-      <div class="badge">
-        <h3>Low Maintenance</h3>
-        <p>Less upkeep than many wood systems when installed with quality materials.</p>
-      </div>
-
-      <div class="badge">
-        <h3>Modern Value</h3>
-        <p>A premium upgrade that adds a clean, updated look to your property.</p>
-      </div>
-    </div>
+<section class="hero">
+  <div class="wrap hero-content">
+    <h1>Built for Views.<br>Crafted to Last.</h1>
+    <p>Premium cable railing installs for lake homes.</p>
+    <a href="#quote" class="btn">Get Quote</a>
   </div>
 </section>
-    <section>
-      <div class="container split">
-        <div class="panel">
-          <div class="eyebrow">About Us</div>
-          <h2>Built on Quality. Focused on You.</h2>
-          <p>
-  Owens Cable Railings LLC delivers clean, durable, custom cable railing installations
-  for decks, balconies, and staircases. We focus on strong materials, quality work,
-  and finished results built to last.
-</p>
-          <p>
-            We also offer written estimates and agreement paperwork for customers who want
-            everything clear and professional before the job begins.
-          </p>
-          <a href="#quote" class="btn">GET A QUOTE</a>
-        </div>
 
-        <div class="panel">
-          <div class="eyebrow">Why Homeowners Choose Us</div>
-          <div class="checklist">
-            <div class="check">Custom-fit installs</div>
-            <div class="check">Free estimates</div>
-            <div class="check">Modern, clean look</div>
-            <div class="check">Built for durability</div>
-            <div class="check">Owner-operated service</div>
-            <div class="check">1-year check-in for cable tension & inspection</div>
-            <div class="check">Safe spacing for kids & pets</div>
-            <div class="check">Strong stainless cable system</div>
-          </div>
-        </div>
-      </div>
-    <section id="gallery">
-
-    <div class="section-head">
-  <div class="eyebrow">Gallery</div>
-  <h2>Real Projects. Real Results.</h2>
-  <p>See real cable railing installations built for decks, staircases, balconies, and custom spaces.</p>
-</div>
-
-        <div class="gallery-grid">
-          <img src="images/gallery-1.jpg" alt="Cable railing project photo 1">
-          <img src="images/gallery-2.jpg" alt="Cable railing project photo 2">
-          <img src="images/gallery-3.jpg" alt="Cable railing project photo 3">
-          <img src="images/gallery-4.jpg" alt="Cable railing project photo 4">
-        </div>
-      </div>
-    </section>
-<section id="how-it-works">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">How It Works</div>
-      <h2>Simple From Start to Finish</h2>
-      <p>We keep the process easy, clear, and professional.</p>
-    </div>
-
-    <div class="badge-grid">
-      <div class="step-card">
-        <h3>1. Reach Out</h3>
-        <p>Call, text, or email us for a free quote.</p>
-      </div>
-
-      <div class="step-card">
-        <h3>2. Project Review</h3>
-        <p>We discuss your space, layout, and goals.</p>
-      </div>
-
-      <div class="step-card">
-        <h3>3. Installation</h3>
-        <p>Clean, custom installation with attention to detail.</p>
-      </div>
-
-      <div class="step-card">
-        <h3>4. Enjoy the Upgrade</h3>
-        <p>Enjoy a modern look, open view, and lasting quality.</p>
-      </div>
-    </div>
+<section id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <p>Owner-operated. No subcontractors. Clean installs done right.</p>
   </div>
 </section>
-    
-<section id="review">
-  <div class="container">
-    <div class="review-box">
-      <div class="eyebrow">Customer Feedback</div>
-      <h2>Leave a Review</h2>
-      <p>We appreciate your feedback. Reviews appear live on the website.</p>
 
-      <form class="review-form" id="reviewForm">
-        <input type="text" id="name" placeholder="Your Name" required>
-        <input type="text" id="project" placeholder="Project Type">
-
-        <div class="rating-wrap full">
-          <label class="rating-label">Rate Your Experience</label>
-          <div class="star-rating">
-            <input type="radio" id="star5" name="rating" value="5" required><label for="star5">★</label>
-            <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
-            <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
-            <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
-            <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
-          </div>
-        </div>
-
-        <textarea class="full" id="message" placeholder="Write your review here..." required></textarea>
-        <button type="submit" class="btn full">SUBMIT REVIEW</button>
-      </form>
-
-      <div class="form-note">Reviews are posted instantly after submission.</div>
-
-      <div id="reviewsList" style="margin-top:24px;"></div>
-    </div>
+<section id="gallery">
+  <div class="wrap">
+    <h2>Gallery</h2>
+    <p>Add your project images here.</p>
   </div>
 </section>
-    <section class="contact" id="quote">
-      <div class="container">
-        <div class="contact-box">
-          <div class="eyebrow">Get a Free Quote</div>
-          <h2>Ready to Upgrade Your View?</h2>
-          <p>
-            Call, text, or email Micheal Owens today for a free estimate.
-            Written estimates and agreement paperwork are available upon request.
-          </p>
 
-          <div class="contact-grid">
-            <div class="contact-item">
-              <strong>Owner</strong>
-              <span>Micheal Owens</span>
-            </div>
+<section id="reviews">
+  <div class="wrap">
+    <h2>Reviews</h2>
+    <div id="reviewsList"></div>
+  </div>
+</section>
 
-            <div class="contact-item">
-              <strong>Phone</strong>
-              <a href="tel:5738738440">(573) 873-8440</a>
-            </div>
+<section id="quote" class="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <a href="tel:5738738440">(573) 873-8440</a>
+    <a href="mailto:owenscablerailingsllc@gmail.com">Email</a>
+  </div>
+</section>
 
-            <div class="contact-item">
-              <strong>Email</strong>
-              <a href="mailto:owenscablerailingsllc@gmail.com">owenscablerailingsllc@gmail.com</a>
-            </div>
-
-            <div class="contact-item">
-              <strong>Business</strong>
-              <span>Owens Cable Railings LLC</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      Owens Cable Railings LLC • Premium cable railing installation
-    </div>
-  </footer>
-
+<!-- FIREBASE -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import {
-  getFirestore,
-  collection,
-  addDoc,
-  getDocs,
-  query,
-  orderBy,
-  serverTimestamp
+  getFirestore, collection, addDoc, getDocs,
+  query, orderBy, serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -968,79 +150,32 @@ const firebaseConfig = {
   projectId: "owens-cable-railings-llc",
   storageBucket: "owens-cable-railings-llc.firebasestorage.app",
   messagingSenderId: "999651019725",
-  appId: "1:999651019725:web:995c7d03f78c210e4b5284",
-  measurementId: "G-ZLJV9BMXVX"
+  appId: "1:999651019725:web:995c7d03f78c210e4b5284"
 };
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-
-const form = document.getElementById("reviewForm");
 const reviewsList = document.getElementById("reviewsList");
 
-async function loadReviews() {
-  reviewsList.innerHTML = "";
+async function loadReviews(){
+  reviewsList.innerHTML="";
+  const q=query(collection(db,"reviews"),orderBy("created","desc"));
+  const snap=await getDocs(q);
 
-  const q = query(collection(db, "reviews"), orderBy("created", "desc"));
-  const snap = await getDocs(q);
-
-  snap.forEach((item) => {
-    const r = item.data();
-
-    reviewsList.innerHTML += `
-      <div style="background:#171717;padding:18px;border-radius:16px;margin-top:14px;border:1px solid rgba(255,255,255,.08);">
-        <h3 style="margin:0;">${r.name}</h3>
-        <p style="margin:6px 0;color:#d0ab5b;">${"★".repeat(r.rating)}</p>
-        <p style="margin:6px 0;color:#ccc;"><strong>Project:</strong> ${r.project || "General"}</p>
-        <p style="margin:0;">${r.message}</p>
+  snap.forEach(doc=>{
+    const r=doc.data();
+    reviewsList.innerHTML+=`
+      <div class="review">
+        <strong>${r.name}</strong><br>
+        ${"★".repeat(r.rating)}<br>
+        "${r.message}"
       </div>
     `;
   });
 }
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  const name = document.getElementById("name").value;
-  const project = document.getElementById("project").value;
-  const message = document.getElementById("message").value;
-  const rating = document.querySelector('input[name="rating"]:checked')?.value;
-
-  await addDoc(collection(db, "reviews"), {
-    name,
-    project,
-    message,
-    rating: Number(rating),
-    created: serverTimestamp()
-  });
-
-  form.reset();
-  loadReviews();
-});
-
 loadReviews();
 </script>
 
-
-<a href="sms:5738738440&body=Hi%20Owens%20Cable%20Railings%2C%20I%E2%80%99m%20looking%20for%20a%20quote%20for%20my%20project." class="floating-text-btn">
-  Text for Fast Quote
-</a>
-<script>
-const menuToggle = document.getElementById("menuToggle");
-const siteMenu = document.getElementById("siteMenu");
-const menuLinks = document.querySelectorAll("#siteMenu a");
-
-if(menuToggle && siteMenu){
-  menuToggle.addEventListener("click", () => {
-    siteMenu.classList.toggle("show");
-  });
-
-  menuLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      siteMenu.classList.remove("show");
-    });
-  });
-}
-</script>
 </body>
 </html>
