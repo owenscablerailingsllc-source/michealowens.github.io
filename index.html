@@ -6,6 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Owens Cable Railings LLC — Premium Installations, Lake of the Ozarks</title>
   <meta name="description" content="Elite cable railing installations for luxury lake homes, decks, and staircases at Lake of the Ozarks. Owner-operated. Free estimates.">
+  
+  <!-- FAVICON -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='none' stroke='%23c9a84c' stroke-width='6'/><text y='62' x='52' font-family='Georgia, serif' font-size='38' font-weight='300' fill='%23c9a84c' text-anchor='middle'>OCR</text></svg>">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23080808'/><circle cx='50' cy='50' r='42' fill='none' stroke='%23c9a84c' stroke-width='4'/><text y='62' x='52' font-family='Georgia, serif' font-size='34' font-weight='300' fill='%23c9a84c' text-anchor='middle'>OCR</text></svg>">
+
+  <!-- SOCIAL MEDIA PREVIEW TAGS (OPEN GRAPH) -->
+  <meta property="og:type" content="website">
+  <!-- UPDATE THE TWO URLS BELOW ONCE YOU BUY YOUR DOMAIN NAME -->
+  <meta property="og:url" content="https://www.yourdomain.com/">
+  <meta property="og:title" content="Owens Cable Railings LLC — Lake of the Ozarks">
+  <meta property="og:description" content="Premium cable railing installations for luxury lake homes, decks, and staircases.">
+  <meta property="og:image" content="https://www.yourdomain.com/images/gallery-after-new.jpg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;700&display=swap" rel="stylesheet">
@@ -1040,6 +1053,16 @@
       background: linear-gradient(90deg, var(--gold-line), transparent);
     }
 
+    .footer-social {
+      color: var(--muted);
+      transition: color .2s;
+      display: flex;
+      align-items: center;
+    }
+    .footer-social:hover {
+      color: var(--gold);
+    }
+
     /* ── FLOATING CTA ── */
     .float-cta {
       position: fixed;
@@ -1121,7 +1144,8 @@
       .form-grid .span-2 { grid-column: auto; }
       .process-grid { grid-template-columns: 1fr; }
       .gallery-grid { grid-template-columns: 1fr; }
-      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .hidden-mobile { display: none !important; }
       .float-cta { bottom: 18px; right: 18px; }
       .compare-container { aspect-ratio: 1 / 1; }
     }
@@ -1293,8 +1317,11 @@
       </div>
 
       <div class="compare-container reveal">
-        <img src="62D32375-7EAB-4DC1-B806-9A49D19DC08D.png" alt="After" class="compare-img compare-after">
-        <img src="IMG_5770.png" alt="Before" class="compare-img compare-before" id="compareBefore">
+        <!-- PASTE YOUR "AFTER" IMAGE LINK INSIDE THE src="" BELOW -->
+        <img src="PASTE_AFTER_IMAGE_LINK_HERE.jpg" alt="After" class="compare-img compare-after" onerror="this.src='https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'">
+        
+        <!-- PASTE YOUR "BEFORE" IMAGE LINK INSIDE THE src="" BELOW -->
+        <img src="PASTE_BEFORE_IMAGE_LINK_HERE.jpg" alt="Before" class="compare-img compare-before" id="compareBefore" onerror="this.src='https://images.unsplash.com/photo-1510627489930-0c1b0bfb6785?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'">
         <div class="compare-handle" id="compareHandle"></div>
         <input type="range" min="0" max="100" value="50" class="compare-slider" id="compareSlider" aria-label="Compare before and after">
       </div>
@@ -1488,7 +1515,11 @@
     <div class="wrap footer-inner">
       <div class="footer-copy">© 2025 Owens Cable Railings LLC</div>
       <div class="footer-gold-line"></div>
-      <div class="footer-copy">Premium Installations · Lake of the Ozarks</div>
+      <div class="footer-copy hidden-mobile">Premium Installations · Lake of the Ozarks</div>
+      <div class="footer-gold-line hidden-mobile" style="background: linear-gradient(270deg, var(--gold-line), transparent);"></div>
+      <a href="https://www.facebook.com/share/1CsSNMzhCV/?mibextid=wwXIfr" target="_blank" class="footer-social" aria-label="Facebook">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+      </a>
     </div>
   </footer>
 
