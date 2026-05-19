@@ -244,10 +244,9 @@
       overflow: hidden;
     }
 
-  /* Make sure the main hero section container has a pitch-black floor */
-.hero {
+ .hero {
   position: relative;
-  background-color: #000000;
+  background-color: #000000; /* This guarantees the base floor is pitch black */
   overflow: hidden;
 }
 
@@ -255,41 +254,28 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  
-  /* Cranked the center up to #333 for a much harder, punchier studio look */
   background: radial-gradient(circle at center, #333333 0%, #000000 65%);
   
-  /* Starts completely invisible for the hard fade-in */
+  /* Force it to start completely hidden (pitch black) */
   opacity: 0; 
   
-  /* Smooth, aggressive 2-second ease-in out */
-  animation: hardLoadFade 2s cubic-bezier(0.16, 1, 0.3, 1) forwards,
-             scrollFade linear forwards;
-  
-  /* Tells the browser to look at the main page scrollbar */
-  animation-timeline: auto, scroll(root);
-  animation-range: normal, exit 0% exit 70%;
+  /* Length increased to 4 seconds, using ease-in-out for a cinematic transition */
+  animation: dramaticLoadFade 4s ease-in-out forwards;
 }
 
-/* 1. THE HARD FADE: Turns the spotlight on dramatically */
-@keyframes hardLoadFade {
+/* THE CINEMATIC LOAD: Holds black, then slowly blooms open */
+@keyframes dramaticLoadFade {
   0% {
     opacity: 0;
-    transform: scale(0.95); /* Tiny subtle zoom-in adds to the drama */
+  }
+  /* Holds the screen pure black for the first 20% of the animation time */
+  20% {
+    opacity: 0;
   }
   100% {
     opacity: 1;
-    transform: scale(1);
   }
 }
-
-/* 2. THE SCROLL FADE: Melts to pitch black on scroll */
-@keyframes scrollFade {
-  to {
-    opacity: 0;
-  }
-}
-
 /* FOR TESTING ONLY: This forces your page to be scrollable */
 body {
   min-height: 200vh; 
