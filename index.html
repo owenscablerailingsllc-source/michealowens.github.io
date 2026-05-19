@@ -245,37 +245,38 @@
     }
 
   .hero-bg {
-position: absolute;
-inset: 0;
-background: #000000;
-z-index: 1;
-
-/* 1. This triggers the smooth 2-second fade-in when the page loads */
-animation: studioReveal 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards,
-/* 2. This links the background fade directly to the user's scrollbar */
-scrollFade linear forwards;
-animation-timeline: auto, scroll();
-animation-range: normal, exit 0% exit 80%;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  
+  /* This sets your beautiful studio vignette right away */
+  background: radial-gradient(circle at center, #222222 0%, #000000 75%);
+  
+  /* Animates brightness on load, and opacity on scroll */
+  animation: studioReveal 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards,
+             scrollFade linear forwards;
+  
+  /* Modern CSS scroll linking */
+  animation-timeline: auto, scroll();
+  animation-range: normal, exit 0% exit 80%;
 }
 
-/* Page Load Animation */
+/* 1. Page Load Animation (Fades up from pitch black) */
 @keyframes studioReveal {
-0% {
-background: radial-gradient(circle at center, #000000 0%, #000000 100%);
-}
-100% {
-background: radial-gradient(circle at center, #222222 0%, #000000 75%);
-}
+  0% {
+    filter: brightness(0);
+  }
+  100% {
+    filter: brightness(1);
+  }
 }
 
-/* Scroll Animation */
+/* 2. Scroll Animation (Fades out the layer as you scroll down) */
 @keyframes scrollFade {
-to {
-/* Smoothly dissolves into pure black as they scroll down */
-background: radial-gradient(circle at center, #000000 0%, #000000 100%);
+  to {
+    opacity: 0;
+  }
 }
-}
-
 
     .hero-content {
       position: relative;
