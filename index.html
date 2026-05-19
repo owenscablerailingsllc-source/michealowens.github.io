@@ -1672,21 +1672,22 @@ body {
   </script>
 
 <script>
-      window.addEventListener('scroll', () => {
-        const heroBg = document.querySelector('.hero-bg');
-        if (heroBg) {
-          const scrollPosition = window.scrollY;
-          const fadeRange = 200; 
-          
-          let newOpacity = 1 - (scrollPosition / fadeRange);
-          
-          if (newOpacity < 0) newOpacity = 0;
-          if (newOpacity > 1) newOpacity = 1;
-          
-          heroBg.style.opacity = newOpacity;
-        }
-      });
-    </script>
+    window.addEventListener('scroll', () => {
+      const heroBg = document.querySelector('.hero-bg');
+      if (heroBg) {
+        const scrollPosition = window.scrollY;
+        const fadeRange = 200; // Completely pitch black after 200px of scrolling
+        
+        let newOpacity = 1 - (scrollPosition / fadeRange);
+        
+        if (newOpacity < 0) newOpacity = 0;
+        if (newOpacity > 1) newOpacity = 1;
+        
+        // Breaks the CSS lock so the scroll animation works perfectly
+        heroBg.style.setProperty('opacity', newOpacity, 'important');
+      }
+    });
+  </script>
 
-  </body>
+</body>
 </html>
