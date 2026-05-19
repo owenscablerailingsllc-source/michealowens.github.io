@@ -244,38 +244,55 @@
       overflow: hidden;
     }
 
-  .hero-bg {
+  /* Make sure the main hero section container has a pitch-black floor */
+.hero {
+  position: relative;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+.hero-bg {
   position: absolute;
   inset: 0;
   z-index: 1;
   
-  /* This sets your beautiful studio vignette right away */
-  background: radial-gradient(circle at center, #222222 0%, #000000 75%);
+  /* Cranked the center up to #333 for a much harder, punchier studio look */
+  background: radial-gradient(circle at center, #333333 0%, #000000 65%);
   
-  /* Animates brightness on load, and opacity on scroll */
-  animation: studioReveal 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards,
+  /* Starts completely invisible for the hard fade-in */
+  opacity: 0; 
+  
+  /* Smooth, aggressive 2-second ease-in out */
+  animation: hardLoadFade 2s cubic-bezier(0.16, 1, 0.3, 1) forwards,
              scrollFade linear forwards;
   
-  /* Modern CSS scroll linking */
-  animation-timeline: auto, scroll();
-  animation-range: normal, exit 0% exit 80%;
+  /* Tells the browser to look at the main page scrollbar */
+  animation-timeline: auto, scroll(root);
+  animation-range: normal, exit 0% exit 70%;
 }
 
-/* 1. Page Load Animation (Fades up from pitch black) */
-@keyframes studioReveal {
+/* 1. THE HARD FADE: Turns the spotlight on dramatically */
+@keyframes hardLoadFade {
   0% {
-    filter: brightness(0);
+    opacity: 0;
+    transform: scale(0.95); /* Tiny subtle zoom-in adds to the drama */
   }
   100% {
-    filter: brightness(1);
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
-/* 2. Scroll Animation (Fades out the layer as you scroll down) */
+/* 2. THE SCROLL FADE: Melts to pitch black on scroll */
 @keyframes scrollFade {
   to {
     opacity: 0;
   }
+}
+
+/* FOR TESTING ONLY: This forces your page to be scrollable */
+body {
+  min-height: 200vh; 
 }
 
     .hero-content {
