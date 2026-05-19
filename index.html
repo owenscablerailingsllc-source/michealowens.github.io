@@ -1182,31 +1182,35 @@ body {
       <span class="brand-main">Railings LLC</span>
     </a>
 
-    <style>
-      .brand-text-link {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        text-decoration: none;
-      }
-      .brand-acr {
-        color: #ffffff;
-        font-size: 1.4rem;
-        font-weight: 800;
-        letter-spacing: 1px;
-      }
-      .brand-main {
-        color: #ffffff;
-        font-size: 1.4rem;
-        font-weight: 300;
-        letter-spacing: 0.5px;
-        opacity: 0.9;
-      }
-      @media (max-width: 480px) {
-        .brand-acr, .brand-main {
-          font-size: 1.15rem;
-        }
-      }
+<style>
+  .brand-text-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  .brand-acr {
+    color: #ffffff;
+    font-size: 1.45rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+
+  .brand-main {
+    color: #ffffff;
+    font-size: 1.45rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+  }
+
+  /* Keeps it scaled up large on mobile screens without squishing */
+  @media (max-width: 480px) {
+    .brand-acr, .brand-main {
+      font-size: 1.45rem; 
+    }
+  }
     </style>
 
  <nav class="site-nav">
