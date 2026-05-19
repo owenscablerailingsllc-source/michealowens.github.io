@@ -1174,25 +1174,27 @@ body {
 </head>
 <body>
 
-/* Centers the logo link vertically in your header */
-.brand-logo-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  padding: 5px 0; /* Adds a tiny bit of breathing room top and bottom */
-}
+<header id="siteHeader">
+  <div class="wrap nav-inner">
+    
+    <a href="#" class="brand-logo-link">
+      <img src="4BC7929C-A926-417D-A489-5B5142C050DC.jpeg" alt="Owens Cable Railings LLC Logo" class="header-logo">
+    </a>
 
-/* Fixes the sizing and turns the logo crisp white */
-.header-logo {
-  height: 45px;        /* Restricts the height so it fits perfectly in the bar */
-  width: auto;         /* Keeps the proportions from stretching */
-  display: block;
-  
-  /* THE MAGIC: Inverts the blue to white, making the white box invisible */
-  filter: brightness(0) invert(1); 
-  
-  mix-blend-mode: screen; /* Extra insurance to melt away any leftover background box */
-}
+    <style>
+      .brand-logo-link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+      }
+      .header-logo {
+        height: 45px;        
+        width: auto;         
+        display: block;
+        filter: brightness(0) invert(1);
+        mix-blend-mode: screen;
+      }
+    </style>
 
       <nav class="site-nav">
         <a href="#about">About</a>
