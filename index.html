@@ -247,25 +247,35 @@
   .hero-bg {
 position: absolute;
 inset: 0;
-/* Starting background color is pure black */
 background: #000000;
 z-index: 1;
 
-/* Applies the 2-second smooth studio vignette fade-in on load */
-animation: studioReveal 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+/* 1. This triggers the smooth 2-second fade-in when the page loads */
+animation: studioReveal 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards,
+/* 2. This links the background fade directly to the user's scrollbar */
+scrollFade linear forwards;
+animation-timeline: auto, scroll();
+animation-range: normal, exit 0% exit 80%;
 }
 
-/* The "Wow" load animation for the studio vignette */
+/* Page Load Animation */
 @keyframes studioReveal {
 0% {
-/* Starts completely black */
 background: radial-gradient(circle at center, #000000 0%, #000000 100%);
 }
 100% {
-/* Smoothly fades up into the sleek studio-lit center */
 background: radial-gradient(circle at center, #222222 0%, #000000 75%);
 }
 }
+
+/* Scroll Animation */
+@keyframes scrollFade {
+to {
+/* Smoothly dissolves into pure black as they scroll down */
+background: radial-gradient(circle at center, #000000 0%, #000000 100%);
+}
+}
+
 
     .hero-content {
       position: relative;
