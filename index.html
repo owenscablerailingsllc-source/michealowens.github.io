@@ -1685,5 +1685,22 @@ body {
     reveals.forEach(r => observer.observe(r));
   </script>
 
-</body>
+<script>
+      window.addEventListener('scroll', () => {
+        const heroBg = document.querySelector('.hero-bg');
+        if (heroBg) {
+          const scrollPosition = window.scrollY;
+          const fadeRange = 200; 
+          
+          let newOpacity = 1 - (scrollPosition / fadeRange);
+          
+          if (newOpacity < 0) newOpacity = 0;
+          if (newOpacity > 1) newOpacity = 1;
+          
+          heroBg.style.opacity = newOpacity;
+        }
+      });
+    </script>
+
+  </body>
 </html>
